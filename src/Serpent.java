@@ -1,12 +1,11 @@
-
+/* TODO Javadoc. */
 public class Serpent {
 
 	public int tailleSerpent = 4;
 	
 	public Coordonnees positionSerpent[];
 	
-	/* Initialisation de la taille et de la position de chaque élément du serpent
-	 */
+	/** Initialisation de la taille et de la position de chaque Ã©lÃ©ment du serpent. */
 	public Serpent()
 	{
 		positionSerpent = new Coordonnees[] {
