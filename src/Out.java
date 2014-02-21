@@ -2,11 +2,6 @@
 public class Out {
 
 	
-	public Out()
-	{
-
-	}
-	
 	public void afficherPlateau(MatricePlateau plateau)
 	{
 		for (int j = 0; j < plateau.getYplateau() ; j++ )
