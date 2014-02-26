@@ -1,45 +1,35 @@
 
 public class Snake {
 
-	private MatricePlateau plateau;
+	private Plateau plateau;
 	private Serpent serpent;
 	
 	/*Initialise la matrice du plateau de jeu
-	 *  */
-	public Snake()
+	 *  
+	 */
+	public Snake(int x, int y)
 	{
-		this.plateau = new MatricePlateau(20, 20);
-		/*Serpent serpent = new Serpent();
-		Coordonnees tabSerpent[] = serpent.getPositionSerpent();
-		
-		for(int k = 0; k < tabSerpent.length; k++)
-		{
-		for (int j = 0; j < plateau.getYplateau() ; j++ )
-		{
-			for (int i = 0; i < plateau.getXplateau() ; i++ )
-			{
-				if ((j==plateau.getYplateau())&&(i==plateau.getXplateau()))
-				{
-					this.plateau[i][j] = CasePlateau.SERPENT;
-				}
-				
-				
-			}
-		}	
-		}*/
+		this.plateau = new Plateau(x,y);
+		this.serpent = new Serpent();
+		for (Coordonnees coord : serpent.getPositionSerpent()) {
+			plateau.rajouterSerpent(coord);
+		}
 	}
 	
 	
-	
-	
+/* Ajoute aléaoirement un fruit de coordonnées (x,y) sur le plateau
+ * 	
+ */
 	public void ajouterFruit()
 	{
 		Coordonnees coordonneeAlea = new Coordonnees();
 		this.plateau.rajouterFruit(coordonneeAlea);
 	}
 	
-	
-	public MatricePlateau getPlateau()
+	/* Retourne le plateau de jeu
+	 * 
+	 */
+	public Plateau getPlateau()
 	{
 		return this.plateau;
 	}

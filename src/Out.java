@@ -1,30 +1,23 @@
 
 public class Out {
-
 	
-	public void afficherPlateau(MatricePlateau plateau)
+	public Plateau plateau;
+	
+	public Out(Plateau plateau)
+	{
+		this.plateau = plateau;
+	}
+	public void afficherPlateau()
 	{
 		for (int j = 0; j < plateau.getYplateau() ; j++ )
 		{
 			for (int i = 0; i < plateau.getXplateau() ; i++ )
-			{
-				CasePlateau c = plateau.getCase(new Coordonnees(i, j));
-				
-				switch (c) {
-				case VIDE:
-					System.out.print("v ");
-					break;
-				case SERPENT :
-					System.out.print("s ");
-					break;
-				case FRUIT:
-					System.out.print("x ");
-					break;
-				}	
+			{	
+				System.out.println(plateau.getCase(i,j)); // getter à mettre
 			}
 			System.out.println("");
 		}
-	}
+}
 	
 	public void nettoyerEcran()
 	{

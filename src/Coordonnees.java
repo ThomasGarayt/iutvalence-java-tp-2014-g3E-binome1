@@ -5,16 +5,17 @@ public class Coordonnees {
 	
 	/* Crée un couple de coordonnées de la forme (x,y)
 	 */
-	public Coordonnees(int x1, int y1)
+	public Coordonnees(int x, int y)
 	{
-		this.x = x1;
-		this.y = y1;
+		this.x = x;
+		this.y = y;
 	}
 	
 	public Coordonnees()
 	{
-	  this.x = (int) ((Math.random()*MatricePlateau.getXplateau())-1);
-      this.y = (int) ((Math.random()*MatricePlateau.getYplateau())-1);
+		// réussir à faire sans les static ici
+	  this.x = (int) ((Math.random()*Plateau.getXplateau())-1);
+      this.y = (int) ((Math.random()*Plateau.getYplateau())-1);
 	}
 
 	public int getX() {

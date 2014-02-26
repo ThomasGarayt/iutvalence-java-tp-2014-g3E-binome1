@@ -1,7 +1,13 @@
 
 public enum CasePlateau {
-	VIDE,
-	SERPENT,
-	FRUIT
+	VIDE(" "),
+	SERPENT("s"),
+	FRUIT("f");
 
+	private final String display;
+	
+	CasePlateau(String disp) {
+		display = disp;
+	}
+	
 }

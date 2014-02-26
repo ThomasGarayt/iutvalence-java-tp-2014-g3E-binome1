@@ -3,14 +3,12 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		Snake s = new Snake();
-		Out affichage = new Out();
+		Snake s = new Snake(20,20);
+		Out affichage = new Out(s.getPlateau());
 		
 		affichage.nettoyerEcran();
 		s.ajouterFruit();
-		affichage.afficherPlateau(s.getPlateau());
-		
-	
+		affichage.afficherPlateau();
 	}
 
 }
