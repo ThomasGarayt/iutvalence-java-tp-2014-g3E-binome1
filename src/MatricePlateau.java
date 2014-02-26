@@ -1,8 +1,12 @@
-
+<<<<<<< HEAD
+/* TODO Javadoc. */
+/* TODO Pourquoi pas simplement Plateau ? */
 public class MatricePlateau {
-
+    /* TODO Pourquoi static ? */
 	private static int yPlateau;
+    /* TODO Pourquoi static ? */
 	private static int xPlateau;
+    /* TODO Pourquoi static ? */
 	private static CasePlateau plateau[][];
 	
 	public static void setxPlateau(int xPlateau) {
