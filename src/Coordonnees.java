@@ -1,6 +1,3 @@
-import java.util.Random;
-
-
 public class Coordonnees {
 
 	public final int x;
