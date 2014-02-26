@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* TODO Javadoc. */
 /* TODO Pourquoi pas simplement Plateau ? */
 public class MatricePlateau {
