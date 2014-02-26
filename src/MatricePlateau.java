@@ -1,4 +1,5 @@
 /* TODO Javadoc. */
+/* TODO Pourquoi pas simplement Plateau ? */
 public class MatricePlateau {
     /* TODO Pourquoi static ? */
     public static int xPlateau = 20;
