@@ -17,13 +17,12 @@ public class Snake {
 	}
 	
 	
-/* Ajoute aléaoirement un fruit de coordonnées (x,y) sur le plateau
- * 	
- */
+	/* Ajoute aléaoirement un fruit de coordonnées (x,y) sur le plateau
+	 * 	
+	 */
 	public void ajouterFruit()
 	{
-		Coordonnees coordonneeAlea = new Coordonnees();
-		this.plateau.rajouterFruit(coordonneeAlea);
+		this.plateau.rajouterFruit();
 	}
 	
 	/* Retourne le plateau de jeu

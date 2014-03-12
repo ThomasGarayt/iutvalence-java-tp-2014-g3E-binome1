@@ -13,11 +13,12 @@ public class Out {
 		{
 			for (int i = 0; i < plateau.getXplateau() ; i++ )
 			{	
-				System.out.println(plateau.getCase(i,j)); // getter à mettre
+				System.out.print(plateau.getCase(i,j));
 			}
 			System.out.println("");
 		}
 }
+
 	
 	public void nettoyerEcran()
 	{
