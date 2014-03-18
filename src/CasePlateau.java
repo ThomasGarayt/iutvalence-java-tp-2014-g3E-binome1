@@ -1,18 +1,20 @@
+/* TODO Javadoc. */
+/* TODO Package. */
 
 public enum CasePlateau {
-	VIDE("  "),
-	SERPENT("s "),
-	FRUIT("f ");
+    VIDE("  "),
+    SERPENT("s "),
+    FRUIT("f ");
 
-	private final String display;
-	
-	CasePlateau(String disp) {
-		display = disp;
-	}
+    private final String display;
 
-	@Override
-	public String toString() {
-		return display;
-	}
-	
+    CasePlateau(String disp) {
+        display = disp;
+    }
+
+    @Override
+    public String toString() {
+        return display;
+    }
+
 }
