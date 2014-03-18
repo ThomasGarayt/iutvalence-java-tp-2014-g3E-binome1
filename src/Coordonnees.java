@@ -1,23 +1,22 @@
+/* TODO Javadoc. */
+/* TODO Package. */
+
 public class Coordonnees {
+    public final int x;
+    public final int y;
 
-	public final int x;
-	public final int y;
-	
-	/* Crée un couple de coordonnées de la forme (x,y)
-	 * 
-	 */
-	public Coordonnees(int x, int y)
-	{
-		this.x = x;
-		this.y = y;
-	}
-	
-	public int getX() {
-		return x;
-	}
+    /* CrÃ©e un couple de coordonnÃ©es de la forme (x,y). */
+    public Coordonnees(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 
-	public int getY() {
-		return y;
-	}
-	
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
 }
