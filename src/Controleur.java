@@ -36,8 +36,12 @@ public class Controleur {
          }
     }
     
-    public void avancerSerpent(SensSerpent sens)
+    public void avancerSerpent()
     {
-    	this.serpent.avancer(sens);
+    	this.serpent.avancer();
     }
+
+	public void changerSens(SensSerpent sens) {
+		this.serpent.changerSens(sens);
+	}
 }

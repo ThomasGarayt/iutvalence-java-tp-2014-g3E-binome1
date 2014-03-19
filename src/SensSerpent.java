@@ -1,21 +1,19 @@
 /* TODO Javadoc. */
 /* TODO Package. */
 public enum SensSerpent {
-	GAUCHE(-1,0,"DROITE"),
-	HAUT(0,-1,"BAS"),
-	DROITE(1,0,"GAUCHE"),
-	BAS(0,1,"HAUT");
+	GAUCHE(-1,0),
+	HAUT(0,-1),
+	DROITE(1,0),
+	BAS(0,1);
 	
 	private int DeltaX;
 	private int DeltaY;
-	private String SensInverse;
-	
+
 	/* Constructeur */
-	private SensSerpent(int DeltaX, int DeltaY, String SensInverse)
+	private SensSerpent(int DeltaX, int DeltaY)
 	{
 		this.DeltaX = DeltaX;
 		this.DeltaY = DeltaY;
-		this.SensInverse  = SensInverse;
 	}
 	
 	/* Permet d'obtenir le Delta en X des differents sens */
@@ -27,11 +25,4 @@ public enum SensSerpent {
     public int getDeltaY() {
         return this.DeltaY;
     }
-    
-    /* Permet d'obtenir le sens inverse */
-    public String getSensInverse() {
-        return this.SensInverse;
-    }
-    
-
 }

@@ -15,7 +15,8 @@ public class Application {
         affichage.afficherPlateau();
         Thread.sleep(2000);
         s.enleverSerpentSurPlateau();
-        s.avancerSerpent(SensSerpent.GAUCHE);
+        s.changerSens(SensSerpent.BAS);
+        s.avancerSerpent();
         }
     }
 
