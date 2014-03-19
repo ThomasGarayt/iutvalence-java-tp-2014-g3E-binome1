@@ -1,30 +1,30 @@
 /* TODO Javadoc. */
 /* TODO Package. */
 public class Plateau {
-    /* TODO À renommer. */
-    private final int yPlateau;
-    /* TODO À renommer. */
-    private final int xPlateau;
+	
+    private final int tailleAbscissePlateau;
+    private final int tailleOrdonneePlateau;
+    
     private CasePlateau plateau[][];
 
-    /* TODO Utilité ? */
+    /* Permet d'obtenir la limite en X du plateau */
     public int getXplateau() {
-        return xPlateau;
+        return tailleAbscissePlateau;
     }
 
-    /* TODO Utilité ? */
+    /* Permet d'obtenir la limite en Y du plateau */
     public int getYplateau() {
-        return yPlateau;
+        return tailleOrdonneePlateau;
     }
 
     /* Création et initialisation à vide du plateau. */
     public Plateau(int x, int y) {
-        this.yPlateau = y;
-        this.xPlateau = x;
+        this.tailleOrdonneePlateau = y;
+        this.tailleAbscissePlateau = x;
 
-        this.plateau = new CasePlateau[xPlateau][yPlateau];
-        for (int i = 0; i < xPlateau; i++) {
-            for (int j = 0; j < yPlateau; j++) {
+        this.plateau = new CasePlateau[tailleAbscissePlateau][tailleOrdonneePlateau];
+        for (int i = 0; i < tailleAbscissePlateau; i++) {
+            for (int j = 0; j < tailleOrdonneePlateau; j++) {
                 this.plateau[i][j] = CasePlateau.VIDE;
             }
         }
@@ -36,8 +36,8 @@ public class Plateau {
     public void rajouterFruit() {
         while (true) {
             /* TODO Préférer SecureRandom à Math.random */
-            int xFruit = (int) ((Math.random() * this.xPlateau) - 1);
-            int yFruit = (int) ((Math.random() * this.yPlateau) - 1);
+            int xFruit = (int) ((Math.random() * this.tailleAbscissePlateau) - 1);
+            int yFruit = (int) ((Math.random() * this.tailleOrdonneePlateau) - 1);
 
             if (this.plateau[xFruit][yFruit] != CasePlateau.SERPENT) {
                 this.plateau[xFruit][yFruit] = CasePlateau.FRUIT;
@@ -50,7 +50,12 @@ public class Plateau {
     public void rajouterSerpent(Coordonnees c) {
         this.plateau[c.getX()][c.getY()] = CasePlateau.SERPENT;
     }
-
+    
+    /* Suppression d'une case SERPENT à une coordonnée donnée. */
+    public void enleverSerpent(Coordonnees c) {
+        this.plateau[c.getX()][c.getY()] = CasePlateau.VIDE;
+    }
+    
     /* Retourne le type de la Case : FRUIT, SERPENT ou VIDE. */
     public CasePlateau getCase(Coordonnees c) {
         return this.plateau[c.getX()][c.getY()];
@@ -59,6 +64,4 @@ public class Plateau {
     public CasePlateau getCase(int x, int y) {
         return this.plateau[x][y];
     }
-
-
 }

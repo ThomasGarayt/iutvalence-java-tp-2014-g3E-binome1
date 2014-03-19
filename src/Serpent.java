@@ -19,10 +19,20 @@ public class Serpent {
         positionSerpent = new Coordonnees[]{new Coordonnees(10, 10), new Coordonnees(11, 10), new Coordonnees(12, 10), new Coordonnees(13, 10)};
     }
 
-    public void avancer() {
-        // G�rer l'avancement du serpent
-        /* TODO Discutable. */
-        // On modifie le tableau en le d�calant � gauche, en faisant Coordonnees[0] + Delta
-    }
+    public void avancer(SensSerpent nouveauSens) 
+    {
+    	if(nouveauSens.toString() != sens.getSensInverse())
+    	{
+    	this.sens = nouveauSens;
+    	Coordonnees NewTeteSerpent = new Coordonnees(this.positionSerpent[0].x + this.sens.getDeltaX(), this.positionSerpent[0].y + this.sens.getDeltaY());
 
+    	for(int i = tailleSerpent - 1; i > 0 ; i--)
+    		{
+    			positionSerpent[i] = positionSerpent[i-1];    		
+    		} 
+    	positionSerpent[0] = NewTeteSerpent;
+    	
+    	
+    	}
+    }
 }

@@ -3,14 +3,20 @@
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        Snake s = new Snake(20, 20);
+        Controleur s = new Controleur(20, 20);
         Out affichage = new Out(s.getPlateau());
-
-        affichage.nettoyerEcran();
         s.ajouterFruit();
+        for(int i = 0; i<10;i++)
+        {
+        affichage.nettoyerEcran();
+        s.mettreSerpentSurPlateau();
         affichage.afficherPlateau();
+        Thread.sleep(2000);
+        s.enleverSerpentSurPlateau();
+        s.avancerSerpent(SensSerpent.GAUCHE);
+        }
     }
 
 }
