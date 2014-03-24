@@ -1,23 +1,32 @@
-/* TODO Javadoc. */
 /* TODO Package. */
+
+/**
+ * TODO.
+ *
+ * @author TODO
+ * @version TODO
+ */
 public class Plateau {
     /* TODO À renommer. */
+    /** TODO. */
     private final int yPlateau;
     /* TODO À renommer. */
+    /** TODO. */
     private final int xPlateau;
-    private CasePlateau plateau[][];
+    /** TODO. */
+    private final CasePlateau[][] plateau;
 
-    /* TODO Utilité ? */
+    /** TODO. */
     public int getXplateau() {
         return xPlateau;
     }
 
-    /* TODO Utilité ? */
+    /** TODO. */
     public int getYplateau() {
         return yPlateau;
     }
 
-    /* Création et initialisation à vide du plateau. */
+    /** Création et initialisation à vide du plateau. */
     public Plateau(int x, int y) {
         this.yPlateau = y;
         this.xPlateau = x;
@@ -30,35 +39,27 @@ public class Plateau {
         }
     }
 
-    /* Rajout d'une case FRUIT à une coordonnée donnée.
+    /**
+     * Rajout d'une case FRUIT à une coordonnée donnée.
      * TODO à améliorer dans des futures versions.
      */
     public void rajouterFruit() {
-        while (true) {
-            /* TODO Préférer SecureRandom à Math.random */
-            int xFruit = (int) ((Math.random() * this.xPlateau) - 1);
-            int yFruit = (int) ((Math.random() * this.yPlateau) - 1);
-
-            if (this.plateau[xFruit][yFruit] != CasePlateau.SERPENT) {
-                this.plateau[xFruit][yFruit] = CasePlateau.FRUIT;
-                break;
-            }
+        int xFruit;
+        int yFruit;
+        do {
+            xFruit = (int) ((Math.random() * this.xPlateau) - 1);
+            yFruit = (int) ((Math.random() * this.yPlateau) - 1);
         }
+        while (this.plateau[xFruit][yFruit] == CasePlateau.SERPENT);
+        this.plateau[xFruit][yFruit] = CasePlateau.FRUIT;
     }
 
-    /* Rajout d'une case SERPENT à une coordonnée donnée. */
+    /** Rajout d'une case SERPENT à une coordonnée donnée. */
     public void rajouterSerpent(Coordonnees c) {
         this.plateau[c.getX()][c.getY()] = CasePlateau.SERPENT;
-    }
-
-    /* Retourne le type de la Case : FRUIT, SERPENT ou VIDE. */
-    public CasePlateau getCase(Coordonnees c) {
-        return this.plateau[c.getX()][c.getY()];
     }
 
     public CasePlateau getCase(int x, int y) {
         return this.plateau[x][y];
     }
-
-
 }

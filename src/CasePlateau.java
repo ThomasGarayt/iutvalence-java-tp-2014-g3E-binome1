@@ -1,6 +1,11 @@
-/* TODO Javadoc. */
 /* TODO Package. */
 
+/**
+ * TODO.
+ *
+ * @author TODO
+ * @version TODO
+ */
 public enum CasePlateau {
     VIDE("  "),
     SERPENT("s "),
@@ -16,5 +21,4 @@ public enum CasePlateau {
     public String toString() {
         return display;
     }
-
 }

@@ -1,11 +1,20 @@
-/* TODO Javadoc. */
 /* TODO Package. */
-/* TODO À discuter : Serpent vs. Snake. */
-public class Snake {
-    private Plateau plateau;
-    private Serpent serpent;
 
-    /* Initialise la matrice du plateau de jeu. */
+/* TODO À discuter : Serpent vs. Snake. */
+
+/**
+ * TODO.
+ *
+ * @author TODO
+ * @version TODO
+ */
+public class Snake {
+    /** TODO. */
+    private final Plateau plateau;
+    /** TODO. */
+    private final Serpent serpent;
+
+    /** Initialise la matrice du plateau de jeu. */
     public Snake(int x, int y) {
         this.plateau = new Plateau(x, y);
         this.serpent = new Serpent();
@@ -14,12 +23,12 @@ public class Snake {
         }
     }
 
-    /* Ajoute aléatoirement un fruit de coordonnées (x,y) sur le plateau. */
+    /** Ajoute aléatoirement un fruit de coordonnées (x,y) sur le plateau. */
     public void ajouterFruit() {
         this.plateau.rajouterFruit();
     }
 
-    /* Retourne le plateau de jeu. */
+    /** Retourne le plateau de jeu. */
     public Plateau getPlateau() {
         return this.plateau;
     }
