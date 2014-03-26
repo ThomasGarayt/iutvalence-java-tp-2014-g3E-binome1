@@ -65,6 +65,6 @@ public class Controleur {
     /* TODO Ca n'a rien à faire ici. */
 	/** Verifie si la nouvelle case est vide / ou juste avec un fruit */
     public boolean caseValide(Coordonnees nouvelleCase) {
-        return plateau.getCase(nouvelleCase) == CasePlateau.SERPENT;
+        return plateau.getCase(nouvelleCase) == Case.SERPENT;
     }
 }

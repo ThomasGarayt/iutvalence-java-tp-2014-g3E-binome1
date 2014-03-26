@@ -12,17 +12,17 @@ public class Plateau {
     /** TODO. */
     private final int             hauteur;
     /** TODO. */
-    private final CasePlateau[][] plateau;
+    private final Case[][] plateau;
 
     /** Création et initialisation à vide du plateau. */
     public Plateau(int x, int y) {
         this.hauteur = y;
         this.largeur = x;
 
-        this.plateau = new CasePlateau[largeur][hauteur];
+        this.plateau = new Case[largeur][hauteur];
         for (int indiceAbscisse = 0; indiceAbscisse < largeur; indiceAbscisse++) {
             for (int indiceOrdonnee = 0; indiceOrdonnee < hauteur; indiceOrdonnee++) {
-                this.plateau[indiceAbscisse][indiceOrdonnee] = CasePlateau.VIDE;
+                this.plateau[indiceAbscisse][indiceOrdonnee] = Case.VIDE;
             }
         }
     }
@@ -47,8 +47,8 @@ public class Plateau {
             int xFruit = (int) ((Math.random() * this.largeur) - 1);
             int yFruit = (int) ((Math.random() * this.hauteur) - 1);
 
-            if (this.plateau[xFruit][yFruit] != CasePlateau.SERPENT) {
-                this.plateau[xFruit][yFruit] = CasePlateau.FRUIT;
+            if (this.plateau[xFruit][yFruit] != Case.SERPENT) {
+                this.plateau[xFruit][yFruit] = Case.FRUIT;
                 break;
             }
         }
@@ -56,22 +56,22 @@ public class Plateau {
 
     /** Rajout d'une case SERPENT à une coordonnée donnée. */
     public void ajouterSerpent(Coordonnees c) {
-        this.plateau[c.getX()][c.getY()] = CasePlateau.SERPENT;
+        this.plateau[c.getX()][c.getY()] = Case.SERPENT;
     }
     
     /** Suppression d'une case SERPENT à une coordonnée donnée. */
     public void enleverSerpent(Coordonnees c) {
-        this.plateau[c.getX()][c.getY()] = CasePlateau.VIDE;
+        this.plateau[c.getX()][c.getY()] = Case.VIDE;
     }
     
     /** Retourne le type de la Case : FRUIT, SERPENT ou VIDE. */
-    public CasePlateau getCase(Coordonnees c) {
+    public Case getCase(Coordonnees c) {
         return this.plateau[c.getX()][c.getY()];
 
     }
 
     /** TODO. */
-    public CasePlateau getCase(int x, int y) {
+    public Case getCase(int x, int y) {
         return this.plateau[x][y];
     }
 }

@@ -6,14 +6,14 @@
  * @author CHAUVEAU - GARAYT
  * @version 26-03-2014
  */
-public enum CasePlateau {
+public enum Case {
     VIDE("  "),
     SERPENT("s "),
     FRUIT("f ");
 
     private final String display;
 
-    CasePlateau(String disp) {
+    Case(String disp) {
         display = disp;
     }
 
