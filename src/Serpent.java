@@ -28,6 +28,7 @@ public class Serpent {
         									new Coordonnees(14, 10)};
     }
 
+    /** TODO. */
     public Coordonnees[] position() {
         return positionSerpent;
     }
