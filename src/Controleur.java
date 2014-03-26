@@ -32,7 +32,7 @@ public class Controleur {
     /** TODO. */
     public void mettreSerpentSurPlateau()
     {
-        for (Coordonnees coord : serpent.getPositionSerpent()) {
+        for (Coordonnees coord : serpent.position()) {
             plateau.rajouterSerpent(coord);
         }
     }
@@ -40,7 +40,7 @@ public class Controleur {
     /** TODO. */
     public void enleverSerpentSurPlateau()
     {
-    	 for (Coordonnees coord : serpent.getPositionSerpent()) {
+    	 for (Coordonnees coord : serpent.position()) {
              plateau.enleverSerpent(coord);
          }
     }

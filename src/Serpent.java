@@ -28,7 +28,7 @@ public class Serpent {
         									new Coordonnees(14, 10)};
     }
 
-    public Coordonnees[] getPositionSerpent() {
+    public Coordonnees[] position() {
         return positionSerpent;
     }
 
