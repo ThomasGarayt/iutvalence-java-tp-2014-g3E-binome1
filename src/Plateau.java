@@ -8,9 +8,9 @@
  */
 public class Plateau {
     /** TODO. */
-    private final int             largeur;
+    private final int      largeur;
     /** TODO. */
-    private final int             hauteur;
+    private final int      hauteur;
     /** TODO. */
     private final Case[][] plateau;
 
@@ -25,16 +25,6 @@ public class Plateau {
                 this.plateau[indiceAbscisse][indiceOrdonnee] = Case.VIDE;
             }
         }
-    }
-
-    /** Permet d'obtenir la limite en X du plateau */
-    public int largeur() {
-        return largeur;
-    }
-
-    /** Permet d'obtenir la limite en Y du plateau */
-    public int hauteur() {
-        return hauteur;
     }
 
     /**
@@ -63,15 +53,31 @@ public class Plateau {
     public void enleverSerpent(Coordonnees c) {
         this.plateau[c.getX()][c.getY()] = Case.VIDE;
     }
-    
-    /** Retourne le type de la Case : FRUIT, SERPENT ou VIDE. */
-    public Case getCase(Coordonnees c) {
-        return this.plateau[c.getX()][c.getY()];
 
-    }
+    @Override
+    public String toString() {
+        final StringBuilder plateau = new StringBuilder(hauteur*(largeur+2));
 
-    /** TODO. */
-    public Case getCase(int x, int y) {
-        return this.plateau[x][y];
+        plateau.append('/');
+        for (int i = 0; i < largeur; i++) {
+            plateau.append("--");
+        }
+        plateau.append("\\\n");
+
+        for (int j = 0; j < hauteur; j++) {
+            plateau.append('|');
+            for (int i = 0; i < largeur; i++) {
+                plateau.append(this.plateau[i][j]);
+            }
+            plateau.append("|\n");
+        }
+
+        plateau.append('\\');
+        for (int i = 0; i < largeur; i++) {
+            plateau.append("--");
+        }
+        plateau.append('/');
+
+        return plateau.toString();
     }
 }

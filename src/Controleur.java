@@ -23,48 +23,36 @@ public class Controleur {
         this.plateau.ajouterFruit();
     }
 
-    /* TODO Evitez le franglais ! */
     /** Retourne le plateau de jeu. */
-    public Plateau getPlateau() {
+    public Plateau plateau() {
         return this.plateau;
     }
-    
+
     /** TODO. */
-    public void mettreSerpentSurPlateau()
+    public void tournerVers(final SensSerpent sens) {
+        this.serpent.changerSens(sens);
+    }
+
+    /** TODO. */
+    public void rafraichirSerpent() {
+        effacerSerpent();
+        serpent.avancer();
+        afficherSerpent();
+    }
+
+    /** TODO. */
+    private void afficherSerpent()
     {
-        for (Coordonnees coord : serpent.position()) {
+        for (final Coordonnees coord : serpent.position()) {
             plateau.ajouterSerpent(coord);
         }
     }
 
     /** TODO. */
-    public void enleverSerpentSurPlateau()
+    private void effacerSerpent()
     {
-    	 for (Coordonnees coord : serpent.position()) {
+    	 for (final Coordonnees coord : serpent.position()) {
              plateau.enleverSerpent(coord);
          }
-    }
-    
-    /* TODO A FINIR, NE MARCHE PAS. */
-    /** TODO. */
-    public void avancerSerpent()
-    {
-     	if (caseValide(serpent.positionSerpent[0]))
-    	{
-    		System.out.println("Perdu !");
-    		System.exit(0);
-    	}
-    	this.serpent.avancer();
-  }
-
-    /** TODO. */
-	public void changerSens(SensSerpent sens) {
-		this.serpent.changerSens(sens);
-	}
-
-    /* TODO Ca n'a rien à faire ici. */
-	/** Verifie si la nouvelle case est vide / ou juste avec un fruit */
-    public boolean caseValide(Coordonnees nouvelleCase) {
-        return plateau.getCase(nouvelleCase) == Case.SERPENT;
     }
 }

@@ -9,41 +9,34 @@ public class Application {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Controleur s = new Controleur(20, 20);
-        Affichage affichage = new Affichage(s.getPlateau());
-        s.ajouterFruit();
+        Controleur controleur = new Controleur(20, 20);
+        Affichage affichage = new Affichage(controleur.plateau());
+        /* Placer le premier fruit. */
 
-        affichage.nettoyerEcran();
-        s.mettreSerpentSurPlateau();
-        affichage.afficherPlateau();
-        Thread.sleep(1500);
-        s.enleverSerpentSurPlateau();
-        s.changerSens(SensSerpent.BAS);
-        s.avancerSerpent();
+        controleur.ajouterFruit();
 
-        affichage.nettoyerEcran();
-        s.mettreSerpentSurPlateau();
-        affichage.afficherPlateau();
+        affichage.nettoyer();
+        controleur.rafraichirSerpent();
+        affichage.afficher();
         Thread.sleep(1500);
-        s.enleverSerpentSurPlateau();
-        s.changerSens(SensSerpent.DROITE);
-        s.avancerSerpent();
-        
-        affichage.nettoyerEcran();
-        s.mettreSerpentSurPlateau();
-        affichage.afficherPlateau();
-        Thread.sleep(1500);
-        s.enleverSerpentSurPlateau();
-        s.changerSens(SensSerpent.HAUT);
-        s.avancerSerpent();
-        
-        affichage.nettoyerEcran();
-        s.mettreSerpentSurPlateau();
-        affichage.afficherPlateau();
-        Thread.sleep(1500);
-        s.enleverSerpentSurPlateau();
-        s.changerSens(SensSerpent.GAUCHE);
-        s.avancerSerpent();
+        controleur.tournerVers(SensSerpent.BAS);
 
+        affichage.nettoyer();
+        controleur.rafraichirSerpent();
+        affichage.afficher();
+        Thread.sleep(1500);
+        controleur.tournerVers(SensSerpent.DROITE);
+
+        affichage.nettoyer();
+        controleur.rafraichirSerpent();
+        affichage.afficher();
+        Thread.sleep(1500);
+        controleur.tournerVers(SensSerpent.HAUT);
+
+        affichage.nettoyer();
+        controleur.rafraichirSerpent();
+        affichage.afficher();
+        Thread.sleep(1500);
+        controleur.tournerVers(SensSerpent.GAUCHE);
         }
     }
