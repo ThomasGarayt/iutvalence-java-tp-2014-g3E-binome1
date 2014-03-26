@@ -8,24 +8,22 @@
  * @version 26-03-2014
  */
 public class Serpent {
-	
+    /** Taille initiale du serpent. */
+    private static final int TAILLE_INITIALE = 5;
+    /** Taille actuelle du serpent. */
+    public int tailleSerpent = TAILLE_INITIALE;
     /** Tableau de coordonnées indiquant la position du serpent */
-    public final Coordonnees positionSerpent[];
-    
-    /** Taille actuelle du serpent, initialisée à 5 */
-    public int tailleSerpent = 5;
-    
+    public final Coordonnees[] positionSerpent;
     /** Sens actuel du serpent */
     public SensSerpent sens;
 
     /** Initialisation de la taille et de la position de chaque élément du serpent.  */
     public Serpent() {
         sens = SensSerpent.GAUCHE;
-        positionSerpent = new Coordonnees[]{new Coordonnees(10, 10),
-                                            new Coordonnees(11, 10),
-                                            new Coordonnees(12, 10),
-                                            new Coordonnees(13, 10),
-        									new Coordonnees(14, 10)};
+        positionSerpent = new Coordonnees[tailleSerpent];
+        for (int i = 0; i < tailleSerpent; i++) {
+            positionSerpent[i] = new Coordonnees(10 + i, 10);
+        }
     }
 
     /** TODO. */
@@ -46,8 +44,7 @@ public class Serpent {
     /** Modifie le tableau de position du serpent pour le faire avancer d'une case en fonction de son sens */
     public void avancer() 
     {
-        Coordonnees nouvelleTete = new Coordonnees(this.positionSerpent[0].x + this.sens.getDeltaX(), this.positionSerpent[0].y + this.sens.getDeltaY());
         System.arraycopy(positionSerpent, 0, positionSerpent, 1, tailleSerpent - 1);
-        positionSerpent[0] = nouvelleTete;
+        positionSerpent[0] = new Coordonnees(this.positionSerpent[0].x + this.sens.getDeltaX(), this.positionSerpent[0].y + this.sens.getDeltaY());;
     }
 }
