@@ -20,7 +20,7 @@ public class Application {
         s.enleverSerpentSurPlateau();
         s.changerSens(SensSerpent.BAS);
         s.avancerSerpent();
-        
+
         affichage.nettoyerEcran();
         s.mettreSerpentSurPlateau();
         affichage.afficherPlateau();

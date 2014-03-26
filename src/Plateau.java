@@ -7,21 +7,14 @@
  * @version 26-03-2014
  */
 public class Plateau {
+    /* TODO Reprendre le nom. */
+    /** TODO. */
     private final int tailleAbscissePlateau;
+    /* TODO Reprendre le nom. */
+    /** TODO. */
     private final int tailleOrdonneePlateau;
-    
-    private CasePlateau plateau[][];
-
-    /* Permet d'obtenir la limite en X du plateau */
-    public int getXplateau() {
-        return tailleAbscissePlateau;
-    }
-
-
-    /* Permet d'obtenir la limite en Y du plateau */
-    public int getYplateau() {
-        return tailleOrdonneePlateau;
-    }
+    /** TODO. */
+    private CasePlateau[][] plateau;
 
     /** Création et initialisation à vide du plateau. */
     public Plateau(int x, int y) {
@@ -34,6 +27,18 @@ public class Plateau {
                 this.plateau[indiceAbscisse][indiceOrdonnee] = CasePlateau.VIDE;
             }
         }
+    }
+
+    /* TODO Reprendre le nom. */
+    /** Permet d'obtenir la limite en X du plateau */
+    public int getXplateau() {
+        return tailleAbscissePlateau;
+    }
+
+    /* TODO Reprendre le nom. */
+    /** Permet d'obtenir la limite en Y du plateau */
+    public int getYplateau() {
+        return tailleOrdonneePlateau;
     }
 
     /**

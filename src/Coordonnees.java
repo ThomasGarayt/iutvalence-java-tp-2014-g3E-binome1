@@ -7,10 +7,8 @@
  * @version 26-03-2014
  */
 public class Coordonnees {
-	
-    /** L'abcisse d'une coordonnée */
+    /** L'abscisse d'une coordonnée */
     public final int x;
-    
     /** L'ordonnée d'une coordonnée */
     public final int y;
 

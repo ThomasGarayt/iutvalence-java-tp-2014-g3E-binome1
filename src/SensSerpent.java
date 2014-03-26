@@ -11,25 +11,22 @@ public enum SensSerpent {
 	HAUT(0,-1),
 	DROITE(1,0),
 	BAS(0,1);
-	
-	private int DeltaX;
-	private int DeltaY;
 
-	/* Constructeur */
-	private SensSerpent(int DeltaX, int DeltaY)
-	{
-		this.DeltaX = DeltaX;
-		this.DeltaY = DeltaY;
-	}
-	
+    /** TODO. */
+	private int deltaX;
+    /** TODO. */
+    private int deltaY;
 
-    // Gérer les DeltaX et DeltaY
-    public int getDeltaX() {
-        return this.DeltaX;
+    SensSerpent(int dX, int dY) {
+        this.deltaX = dX;
+        this.deltaY = dY;
     }
-    
-    /* Permet d'obtenir le Delta en Y des differents sens */
+
+    public int getDeltaX() {
+        return this.deltaX;
+    }
+
     public int getDeltaY() {
-        return this.DeltaY;
+        return this.deltaY;
     }
 }
