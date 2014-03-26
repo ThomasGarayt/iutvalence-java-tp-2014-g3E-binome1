@@ -1,5 +1,11 @@
-/* TODO Javadoc. */
 /* TODO Package. */
+
+/**
+ * TODO.
+ *
+ * @author TODO
+ * @version TODO
+ */
 public enum SensSerpent {
 	GAUCHE(-1,0),
 	HAUT(0,-1),
@@ -16,7 +22,8 @@ public enum SensSerpent {
 		this.DeltaY = DeltaY;
 	}
 	
-	/* Permet d'obtenir le Delta en X des differents sens */
+
+    // Gérer les DeltaX et DeltaY
     public int getDeltaX() {
         return this.DeltaX;
     }
