@@ -3,8 +3,8 @@
 /**
  * TODO.
  *
- * @author TODO
- * @version TODO
+ * @author CHAUVEAU - GARAYT
+ * @version 26-03-2014
  */
 public enum SensSerpent {
 	GAUCHE(-1,0),

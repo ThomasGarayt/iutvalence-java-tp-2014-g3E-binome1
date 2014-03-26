@@ -1,15 +1,23 @@
-/* TODO Javadoc. */
 /* TODO Package. */
-/* TODO Je vous invite à renommer cette classe. */
-public class Out {
 
+/**
+ * TODO.
+ *
+ * @author CHAUVEAU - GARAYT
+ * @version 26-03-2014
+ */
+public class Affichage {
+	
+    /** TODO. */
     public Plateau plateau;
-
-    public Out(Plateau plateau) {
+    
+    /** TODO. */
+    public Affichage(Plateau plateau) {
         this.plateau = plateau;
     }
 
-    /* TODO Pourquoi cette classe ici ? */
+    /* TODO Pourquoi cette méthode ici ? */
+    /** Affiche le plateau avec les différentes cases */
     public void afficherPlateau() {
         for (int j = 0; j < plateau.getYplateau(); j++) {
             for (int i = 0; i < plateau.getXplateau(); i++) {
@@ -20,6 +28,7 @@ public class Out {
     }
 
     /* TODO Je vous invite à regarder les codes ANSI pour terminal. */
+    /** Ajout de 20 lignes vides pour "nettoyer" l'écran */
     public void nettoyerEcran() {
         for (int k = 0; k < 20; k++) {
             System.out.println("");

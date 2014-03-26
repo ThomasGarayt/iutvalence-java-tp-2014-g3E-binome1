@@ -3,8 +3,8 @@
 /**
  * TODO.
  *
- * @author TODO
- * @version TODO
+ * @author CHAUVEAU - GARAYT
+ * @version 26-03-2014
  */
 public class Plateau {
     private final int tailleAbscissePlateau;
@@ -13,7 +13,6 @@ public class Plateau {
     private CasePlateau plateau[][];
 
     /* Permet d'obtenir la limite en X du plateau */
-
     public int getXplateau() {
         return tailleAbscissePlateau;
     }
@@ -30,9 +29,9 @@ public class Plateau {
         this.tailleAbscissePlateau = x;
 
         this.plateau = new CasePlateau[tailleAbscissePlateau][tailleOrdonneePlateau];
-        for (int i = 0; i < tailleAbscissePlateau; i++) {
-            for (int j = 0; j < tailleOrdonneePlateau; j++) {
-                this.plateau[i][j] = CasePlateau.VIDE;
+        for (int indiceAbscisse = 0; indiceAbscisse < tailleAbscissePlateau; indiceAbscisse++) {
+            for (int indiceOrdonnee = 0; indiceOrdonnee < tailleOrdonneePlateau; indiceOrdonnee++) {
+                this.plateau[indiceAbscisse][indiceOrdonnee] = CasePlateau.VIDE;
             }
         }
     }
@@ -52,8 +51,6 @@ public class Plateau {
                 break;
             }
         }
-        while (this.plateau[xFruit][yFruit] == CasePlateau.SERPENT);
-        this.plateau[xFruit][yFruit] = CasePlateau.FRUIT;
     }
 
     /** Rajout d'une case SERPENT à une coordonnée donnée. */
@@ -61,12 +58,12 @@ public class Plateau {
         this.plateau[c.getX()][c.getY()] = CasePlateau.SERPENT;
     }
     
-    /* Suppression d'une case SERPENT à une coordonnée donnée. */
+    /** Suppression d'une case SERPENT à une coordonnée donnée. */
     public void enleverSerpent(Coordonnees c) {
         this.plateau[c.getX()][c.getY()] = CasePlateau.VIDE;
     }
     
-    /* Retourne le type de la Case : FRUIT, SERPENT ou VIDE. */
+    /** Retourne le type de la Case : FRUIT, SERPENT ou VIDE. */
     public CasePlateau getCase(Coordonnees c) {
         return this.plateau[c.getX()][c.getY()];
 

@@ -1,11 +1,20 @@
-/* TODO Javadoc. */
 /* TODO Package. */
 
+/**
+ * TODO.
+ *
+ * @author CHAUVEAU - GARAYT
+ * @version 26-03-2014
+ */
 public class Coordonnees {
+	
+    /** L'abcisse d'une coordonnée */
     public final int x;
+    
+    /** L'ordonnée d'une coordonnée */
     public final int y;
 
-    /* Crée un couple de coordonnées de la forme (x,y). */
+    /** Créer un couple de coordonnées de la forme (x,y). */
     public Coordonnees(int x, int y) {
         this.x = x;
         this.y = y;
