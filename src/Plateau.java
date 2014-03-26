@@ -7,49 +7,45 @@
  * @version 26-03-2014
  */
 public class Plateau {
-    /* TODO Reprendre le nom. */
     /** TODO. */
-    private final int tailleAbscissePlateau;
-    /* TODO Reprendre le nom. */
+    private final int             largeur;
     /** TODO. */
-    private final int tailleOrdonneePlateau;
+    private final int             hauteur;
     /** TODO. */
-    private CasePlateau[][] plateau;
+    private final CasePlateau[][] plateau;
 
     /** Création et initialisation à vide du plateau. */
     public Plateau(int x, int y) {
-        this.tailleOrdonneePlateau = y;
-        this.tailleAbscissePlateau = x;
+        this.hauteur = y;
+        this.largeur = x;
 
-        this.plateau = new CasePlateau[tailleAbscissePlateau][tailleOrdonneePlateau];
-        for (int indiceAbscisse = 0; indiceAbscisse < tailleAbscissePlateau; indiceAbscisse++) {
-            for (int indiceOrdonnee = 0; indiceOrdonnee < tailleOrdonneePlateau; indiceOrdonnee++) {
+        this.plateau = new CasePlateau[largeur][hauteur];
+        for (int indiceAbscisse = 0; indiceAbscisse < largeur; indiceAbscisse++) {
+            for (int indiceOrdonnee = 0; indiceOrdonnee < hauteur; indiceOrdonnee++) {
                 this.plateau[indiceAbscisse][indiceOrdonnee] = CasePlateau.VIDE;
             }
         }
     }
 
-    /* TODO Reprendre le nom. */
     /** Permet d'obtenir la limite en X du plateau */
-    public int getXplateau() {
-        return tailleAbscissePlateau;
+    public int largeur() {
+        return largeur;
     }
 
-    /* TODO Reprendre le nom. */
     /** Permet d'obtenir la limite en Y du plateau */
-    public int getYplateau() {
-        return tailleOrdonneePlateau;
+    public int hauteur() {
+        return hauteur;
     }
 
     /**
      * Rajout d'une case FRUIT à une coordonnée donnée.
      * TODO à améliorer dans des futures versions.
      */
-    public void rajouterFruit() {
+    public void ajouterFruit() {
         while (true) {
             /* TODO Préférer SecureRandom à Math.random */
-            int xFruit = (int) ((Math.random() * this.tailleAbscissePlateau) - 1);
-            int yFruit = (int) ((Math.random() * this.tailleOrdonneePlateau) - 1);
+            int xFruit = (int) ((Math.random() * this.largeur) - 1);
+            int yFruit = (int) ((Math.random() * this.hauteur) - 1);
 
             if (this.plateau[xFruit][yFruit] != CasePlateau.SERPENT) {
                 this.plateau[xFruit][yFruit] = CasePlateau.FRUIT;
@@ -59,7 +55,7 @@ public class Plateau {
     }
 
     /** Rajout d'une case SERPENT à une coordonnée donnée. */
-    public void rajouterSerpent(Coordonnees c) {
+    public void ajouterSerpent(Coordonnees c) {
         this.plateau[c.getX()][c.getY()] = CasePlateau.SERPENT;
     }
     
@@ -74,6 +70,7 @@ public class Plateau {
 
     }
 
+    /** TODO. */
     public CasePlateau getCase(int x, int y) {
         return this.plateau[x][y];
     }

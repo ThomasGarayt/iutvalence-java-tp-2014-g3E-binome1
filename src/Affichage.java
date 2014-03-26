@@ -19,8 +19,8 @@ public class Affichage {
     /* TODO Pourquoi cette méthode ici ? */
     /** Affiche le plateau avec les différentes cases */
     public void afficherPlateau() {
-        for (int j = 0; j < plateau.getYplateau(); j++) {
-            for (int i = 0; i < plateau.getXplateau(); i++) {
+        for (int j = 0; j < plateau.hauteur(); j++) {
+            for (int i = 0; i < plateau.largeur(); i++) {
                 System.out.print(plateau.getCase(i, j));
             }
             System.out.println("");

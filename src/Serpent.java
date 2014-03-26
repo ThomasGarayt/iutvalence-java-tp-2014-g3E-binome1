@@ -34,10 +34,10 @@ public class Serpent {
 
     /** Vérifie le sens actuel et le nouveau sens */
     public void changerSens(SensSerpent nouveauSens) {
-    	if (nouveauSens.getDeltaX() != -this.sens.getDeltaX())
+    	if (nouveauSens.deltaX() != -this.sens.deltaX())
     		this.sens = nouveauSens;
 
-    	if (nouveauSens.getDeltaY() != -this.sens.getDeltaY())
+    	if (nouveauSens.deltaY() != -this.sens.deltaY())
     		this.sens = nouveauSens;
     }
 
@@ -45,6 +45,6 @@ public class Serpent {
     public void avancer() 
     {
         System.arraycopy(positionSerpent, 0, positionSerpent, 1, tailleSerpent - 1);
-        positionSerpent[0] = new Coordonnees(this.positionSerpent[0].x + this.sens.getDeltaX(), this.positionSerpent[0].y + this.sens.getDeltaY());;
+        positionSerpent[0] = new Coordonnees(this.positionSerpent[0].x + this.sens.deltaX(), this.positionSerpent[0].y + this.sens.deltaY());;
     }
 }

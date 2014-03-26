@@ -22,11 +22,11 @@ public enum SensSerpent {
         this.deltaY = dY;
     }
 
-    public int getDeltaX() {
+    public int deltaX() {
         return this.deltaX;
     }
 
-    public int getDeltaY() {
+    public int deltaY() {
         return this.deltaY;
     }
 }

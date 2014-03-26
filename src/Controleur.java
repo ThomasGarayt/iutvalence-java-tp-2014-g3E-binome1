@@ -20,7 +20,7 @@ public class Controleur {
 
     /** Ajoute aléatoirement un fruit de coordonnées (x,y) sur le plateau. */
     public void ajouterFruit() {
-        this.plateau.rajouterFruit();
+        this.plateau.ajouterFruit();
     }
 
     /* TODO Evitez le franglais ! */
@@ -33,7 +33,7 @@ public class Controleur {
     public void mettreSerpentSurPlateau()
     {
         for (Coordonnees coord : serpent.position()) {
-            plateau.rajouterSerpent(coord);
+            plateau.ajouterSerpent(coord);
         }
     }
 
