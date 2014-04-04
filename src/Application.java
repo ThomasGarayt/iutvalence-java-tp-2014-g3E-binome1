@@ -15,28 +15,36 @@ public class Application {
 
         controleur.ajouterFruit();
 
+
+                
         affichage.nettoyer();
-        controleur.rafraichirSerpent();
+        controleur.rafraichir();
         affichage.afficher();
         Thread.sleep(1500);
         controleur.tournerVers(SensSerpent.BAS);
-
+        
         affichage.nettoyer();
-        controleur.rafraichirSerpent();
+        controleur.rafraichir();
         affichage.afficher();
         Thread.sleep(1500);
         controleur.tournerVers(SensSerpent.DROITE);
-
+        
         affichage.nettoyer();
-        controleur.rafraichirSerpent();
+        controleur.rafraichir();
         affichage.afficher();
         Thread.sleep(1500);
         controleur.tournerVers(SensSerpent.HAUT);
 
         affichage.nettoyer();
-        controleur.rafraichirSerpent();
+        controleur.rafraichir();
         affichage.afficher();
         Thread.sleep(1500);
-        controleur.tournerVers(SensSerpent.GAUCHE);
+        controleur.tournerVers(SensSerpent.HAUT);
+        
+        affichage.nettoyer();
+        controleur.rafraichir();
+        affichage.afficher();
+        Thread.sleep(1500);
+        controleur.tournerVers(SensSerpent.HAUT);
         }
     }

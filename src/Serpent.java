@@ -1,3 +1,5 @@
+import com.sun.org.apache.xalan.internal.xsltc.dom.CachedNodeListIterator;
+
 /* TODO Package. */
 
 /* TODO Attention, tout ça dépend de la taille du tableau. */
@@ -10,10 +12,13 @@
 public class Serpent {
     /** Taille initiale du serpent. */
     private static final int TAILLE_INITIALE = 5;
+    
     /** Taille actuelle du serpent. */
     public int tailleSerpent = TAILLE_INITIALE;
+    
     /** Tableau de coordonnées indiquant la position du serpent */
     public final Coordonnees[] positionSerpent;
+    
     /** Sens actuel du serpent */
     public SensSerpent sens;
 
@@ -41,10 +46,4 @@ public class Serpent {
     		this.sens = nouveauSens;
     }
 
-    /** Modifie le tableau de position du serpent pour le faire avancer d'une case en fonction de son sens */
-    public void avancer() 
-    {
-        System.arraycopy(positionSerpent, 0, positionSerpent, 1, tailleSerpent - 1);
-        positionSerpent[0] = new Coordonnees(this.positionSerpent[0].x + this.sens.deltaX(), this.positionSerpent[0].y + this.sens.deltaY());;
-    }
 }

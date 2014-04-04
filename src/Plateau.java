@@ -8,9 +8,11 @@
  */
 public class Plateau {
     /** TODO. */
-    private final int      largeur;
+    private final int largeur;
+    
     /** TODO. */
-    private final int      hauteur;
+    private final int hauteur;
+    
     /** TODO. */
     private final Case[][] plateau;
 
@@ -43,7 +45,8 @@ public class Plateau {
             }
         }
     }
-
+    
+    
     /** Rajout d'une case SERPENT à une coordonnée donnée. */
     public void ajouterSerpent(Coordonnees c) {
         this.plateau[c.getX()][c.getY()] = Case.SERPENT;
