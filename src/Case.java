@@ -9,7 +9,8 @@
 public enum Case {
     VIDE("  "),
     SERPENT("s "),
-    FRUIT("f ");
+    FRUIT("f "),
+    MUR("##");
 
     private final String display;
 

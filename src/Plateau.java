@@ -21,7 +21,7 @@ public class Plateau {
         this.hauteur = y;
         this.largeur = x;
 
-        this.plateau = new Case[largeur][hauteur];
+        this.plateau = new Case[largeur+2][hauteur+2];
         for (int indiceAbscisse = 0; indiceAbscisse < largeur; indiceAbscisse++) {
             for (int indiceOrdonnee = 0; indiceOrdonnee < hauteur; indiceOrdonnee++) {
                 this.plateau[indiceAbscisse][indiceOrdonnee] = Case.VIDE;
@@ -36,8 +36,8 @@ public class Plateau {
     public void ajouterFruit() {
         while (true) {
             /* TODO Préférer SecureRandom à Math.random */
-            int xFruit = (int) ((Math.random() * this.largeur) - 1);
-            int yFruit = (int) ((Math.random() * this.hauteur) - 1);
+            int xFruit = 8; //(int) ((Math.random() * this.largeur) - 1);
+            int yFruit = 10; //(int) ((Math.random() * this.hauteur) - 1);
 
             if (this.plateau[xFruit][yFruit] != Case.SERPENT) {
                 this.plateau[xFruit][yFruit] = Case.FRUIT;
@@ -53,10 +53,10 @@ public class Plateau {
     }
     
     /** Suppression d'une case SERPENT à une coordonnée donnée. */
-    public void enleverSerpent(Coordonnees c) {
+    public void viderCase(Coordonnees c) {
         this.plateau[c.getX()][c.getY()] = Case.VIDE;
     }
-
+    
     @Override
     public String toString() {
         final StringBuilder plateau = new StringBuilder(hauteur*(largeur+2));
@@ -82,5 +82,10 @@ public class Plateau {
         plateau.append('/');
 
         return plateau.toString();
+    }
+    
+    public Case getTypeCase(Coordonnees coordonnees)
+    {
+    	return this.plateau[coordonnees.getX()][coordonnees.getY()];
     }
 }

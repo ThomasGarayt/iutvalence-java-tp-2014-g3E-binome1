@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /* TODO Package. */
 
 /**
@@ -54,47 +56,35 @@ public class Controleur {
     private void effacerSerpent()
     {
     	 for (final Coordonnees coord : serpent.position()) {
-             plateau.enleverSerpent(coord);
+             plateau.viderCase(coord);
          }
     }
     
-    
-    /** Utile pour savoir si une case est disponible à accueillir la tête du Serpent, NE FONCTIONNE PAS */
-    public boolean testCaseDisponible(Coordonnees caseATester)
-    {
-    	// Faire un getter dans Plateau
-    }
-    
+
     
     /** Modifie le tableau de position du serpent pour le faire avancer d'une case en fonction de son sens */
     public void avancer() 
     {
-        System.arraycopy(serpent.positionSerpent, 0, serpent.positionSerpent, 1, serpent.tailleSerpent - 1);
-        Coordonnees nouvellePositionTete = new Coordonnees(serpent.positionSerpent[0].x + serpent.sens.deltaX(), serpent.positionSerpent[0].y + serpent.sens.deltaY());
-        
-        /*
-    	if(plateau.testCaseDisponible(nouvellePositionTete))
-    	{
-            serpent.positionSerpent[0] = nouvellePositionTete;
+    	try {
+    		serpent.avancer();
     	}
-    	else
-    	{
-    		System.out.println("PERDU !");
+    	catch (SerpentException e) {
+    		/* XXX Serpent qui s'est mangé tout seul. */
     	}
-        */
     	
-        for (int indiceTableauPosSerpent = 0;indiceTableauPosSerpent < serpent.tailleSerpent;indiceTableauPosSerpent++)
+        switch(plateau.getTypeCase(serpent.tete()))
         {
-        	if (nouvellePositionTete.getX() == serpent.positionSerpent[indiceTableauPosSerpent].getX()
-        			&& nouvellePositionTete.getY() == serpent.positionSerpent[indiceTableauPosSerpent].getY()) {
-        			System.out.println("PERDU !");
-        			System.exit(0);
-        		}
-        }
-      
-        serpent.positionSerpent[0] = nouvellePositionTete;
-        
-
-    }
-       
+        	case FRUIT:
+        		break;
+        	case MUR:
+        		break;
+        	case SERPENT:
+        		/* ERREUR INTERNE */
+        		break;
+        	case VIDE:
+        	default:
+        		/* RIEN */
+        		break;
+         }
+    }       
 }
