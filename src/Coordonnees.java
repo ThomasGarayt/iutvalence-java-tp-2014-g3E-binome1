@@ -25,4 +25,21 @@ public class Coordonnees {
     public int getY() {
         return y;
     }
+    
+    @Override
+    public String toString() {
+    	return "["+x+","+y+"]";
+    }
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Coordonnees)) {
+			return false;
+		}
+		Coordonnees o = (Coordonnees) obj;
+		return x==o.x && y==o.y;
+	}
 }

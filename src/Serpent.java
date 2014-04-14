@@ -9,7 +9,6 @@ import com.sun.org.apache.xalan.internal.xsltc.dom.CachedNodeListIterator;
 
 /* TODO Package. */
 
-/* TODO Attention, tout ça dépend de la taille du tableau. */
 /**
  * TODO.
  *
@@ -35,21 +34,25 @@ public class Serpent {
         }
     }
  
-    
+    /** Enlève le dernier élement de la collection positionSerpent, et rajoute une nouvelle Coordonnee en tête de la collection
+     * @exception Le serpent avance sur une case Serpent */
     public void avancer() throws SerpentException {
     	positionSerpent.pollLast();
     	Coordonnees ancienneTete = positionSerpent.peekFirst();
         Coordonnees nouvellePositionTete = new Coordonnees(ancienneTete.x + sens.deltaX(), ancienneTete.y + sens.deltaY());
         if (positionSerpent.contains(nouvellePositionTete))
+        {
         	throw new SerpentException();
+        }
         positionSerpent.addFirst(nouvellePositionTete);
     }
 
+    /** Retourne la coordonnee de la tête du Serpent */
     public Coordonnees tete() {
     	return positionSerpent.peekFirst();
     }
     
-    /** TODO. */
+    /** Retourne le tableau de Coordonnees correspondant à la collection positionSerpent */
     public Coordonnees[] position() {
     	return positionSerpent.toArray(new Coordonnees[positionSerpent.size()]);
     }
@@ -62,6 +65,15 @@ public class Serpent {
 
     	if (nouveauSens.deltaY() != -this.sens.deltaY())
     		this.sens = nouveauSens;
+    }
+    
+    
+    /** Rajoute la prochaine case parcourue à la collection positionSerpent */
+    public void agrandirSerpent()
+    {
+    	Coordonnees ancienneTete = positionSerpent.peekFirst();
+        Coordonnees nouvellePositionTete = new Coordonnees(ancienneTete.x + sens.deltaX(), ancienneTete.y + sens.deltaY());
+        positionSerpent.addFirst(nouvellePositionTete);
     }
 
 }

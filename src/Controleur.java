@@ -69,14 +69,20 @@ public class Controleur {
     		serpent.avancer();
     	}
     	catch (SerpentException e) {
+    		    System.out.println("Tu t'es mangé toi même !");
+    		    System.exit(0);
     		/* XXX Serpent qui s'est mangé tout seul. */
     	}
     	
         switch(plateau.getTypeCase(serpent.tete()))
         {
         	case FRUIT:
+        		serpent.agrandirSerpent();
+        		ajouterFruit();
         		break;
         	case MUR:
+    		    System.out.println("Bim un mur !");
+    		    System.exit(0);
         		break;
         	case SERPENT:
         		/* ERREUR INTERNE */

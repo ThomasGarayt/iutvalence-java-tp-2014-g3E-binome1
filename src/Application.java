@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /* TODO Package. */
 
 /** TODO.
@@ -11,39 +13,38 @@ public class Application {
 
         Controleur controleur = new Controleur(20, 20);
         Affichage affichage = new Affichage(controleur.plateau());
-        /* Placer le premier fruit. */
-
+        
+        /* Place le premier fruit. */
         controleur.ajouterFruit();
+    	controleur.rafraichir();
+    	affichage.afficher();
 
-                
-        affichage.nettoyer();
-        controleur.rafraichir();
-        affichage.afficher();
-        Thread.sleep(1500);
-        controleur.tournerVers(SensSerpent.GAUCHE);
-        
-        affichage.nettoyer();
-        controleur.rafraichir();
-        affichage.afficher();
-        Thread.sleep(1500);
-        controleur.tournerVers(SensSerpent.GAUCHE);
-        
-        affichage.nettoyer();
-        controleur.rafraichir();
-        affichage.afficher();
-        Thread.sleep(1500);
-        controleur.tournerVers(SensSerpent.GAUCHE);
 
-        affichage.nettoyer();
-        controleur.rafraichir();
-        affichage.afficher();
-        Thread.sleep(1500);
-        controleur.tournerVers(SensSerpent.GAUCHE);
+    	System.out.println("Choix de la direction : ");
+        Scanner sc = new Scanner(System.in);
         
-        affichage.nettoyer();
-        controleur.rafraichir();
-        affichage.afficher();
-        Thread.sleep(1500);
-        controleur.tournerVers(SensSerpent.GAUCHE);
+        while(true)
+        {
+
+        	String touche = sc.nextLine();
+        	if (touche.equals("z")) {
+        		controleur.tournerVers(SensSerpent.HAUT);
+        	}
+        	if (touche.equals("s")) {
+        		controleur.tournerVers(SensSerpent.BAS);
+        	}
+        	if (touche.equals("d")) {
+        		controleur.tournerVers(SensSerpent.DROITE);
+        	}
+        	if (touche.equals("q")) {
+        		controleur.tournerVers(SensSerpent.GAUCHE);
+        	}
+        	affichage.nettoyer();
+        	controleur.rafraichir();
+        	affichage.afficher();
+        	System.out.println("Choix de la direction : ");
+
         }
+    	
     }
+}

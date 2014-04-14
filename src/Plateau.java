@@ -24,7 +24,14 @@ public class Plateau {
         this.plateau = new Case[largeur+2][hauteur+2];
         for (int indiceAbscisse = 0; indiceAbscisse < largeur; indiceAbscisse++) {
             for (int indiceOrdonnee = 0; indiceOrdonnee < hauteur; indiceOrdonnee++) {
-                this.plateau[indiceAbscisse][indiceOrdonnee] = Case.VIDE;
+            	if ((indiceOrdonnee == 0)||(indiceOrdonnee == 1)||(indiceOrdonnee == this.hauteur-2)||(indiceOrdonnee == this.hauteur-1)||(indiceAbscisse == 0)||(indiceAbscisse == this.largeur-1))
+            	{
+            		this.plateau[indiceAbscisse][indiceOrdonnee] = Case.MUR;
+            	}
+            	else
+            	{
+            		this.plateau[indiceAbscisse][indiceOrdonnee] = Case.VIDE;
+            	}
             }
         }
     }
@@ -36,8 +43,8 @@ public class Plateau {
     public void ajouterFruit() {
         while (true) {
             /* TODO Préférer SecureRandom à Math.random */
-            int xFruit = 8; //(int) ((Math.random() * this.largeur) - 1);
-            int yFruit = 10; //(int) ((Math.random() * this.hauteur) - 1);
+            int xFruit = (int) ((Math.random() * this.largeur) - 2)+2;
+            int yFruit = (int) ((Math.random() * this.hauteur) - 2)+2;
 
             if (this.plateau[xFruit][yFruit] != Case.SERPENT) {
                 this.plateau[xFruit][yFruit] = Case.FRUIT;
