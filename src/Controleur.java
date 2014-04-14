@@ -3,16 +3,16 @@ import java.util.Arrays;
 /* TODO Package. */
 
 /**
- * TODO
- *
- * @author TODO
- * @version TODO
+ * @author CHAUVEAU - GARAYT
+ * @version 14-04-2014
  */
+
 public class Controleur {
-    /** TODO. */
+	
+    /** Plateau de jeu contenant les différentes cases */
     private Plateau plateau;
     
-    /** TODO. */
+    /** Serpent qui va être placé sur le plateau */
     private Serpent serpent;
 
     /** Initialise la matrice du plateau de jeu. */
@@ -26,7 +26,8 @@ public class Controleur {
         this.plateau.ajouterFruit();
     }
 
-    /** Retourne le plateau de jeu. */
+    /** Retourne le plateau de jeu. 
+     * @return Plateau */
     public Plateau plateau() {
         return this.plateau;
     }
@@ -44,7 +45,7 @@ public class Controleur {
     }
    
 
-    /** TODO. */
+    /** Place et affiche les cases Serpent sur le Plateau */
     private void afficherSerpent()
     {
         for (final Coordonnees coord : serpent.position()) {
@@ -52,7 +53,7 @@ public class Controleur {
         }
     }
 
-    /** TODO. */
+    /** Enleve les cases Serpent du Plateau */
     private void effacerSerpent()
     {
     	 for (final Coordonnees coord : serpent.position()) {
@@ -62,16 +63,16 @@ public class Controleur {
     
 
     
-    /** Modifie le tableau de position du serpent pour le faire avancer d'une case en fonction de son sens */
+    /** Modifie la collection de position du serpent pour le faire avancer d'une case en fonction de son sens */
     public void avancer() 
     {
     	try {
     		serpent.avancer();
     	}
-    	catch (SerpentException e) {
+    	catch (SerpentException e) { 
+    		/* Le serpent s'est mangé lui même */
     		    System.out.println("Tu t'es mangé toi même !");
     		    System.exit(0);
-    		/* XXX Serpent qui s'est mangé tout seul. */
     	}
     	
         switch(plateau.getTypeCase(serpent.tete()))
@@ -86,6 +87,7 @@ public class Controleur {
         		break;
         	case SERPENT:
         		/* ERREUR INTERNE */
+        		/* CAS IMPOSSIBLE */
         		break;
         	case VIDE:
         	default:

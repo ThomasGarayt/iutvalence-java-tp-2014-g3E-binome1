@@ -1,10 +1,8 @@
 /* TODO Package. */
 
 /**
- * TODO.
- *
  * @author CHAUVEAU - GARAYT
- * @version 26-03-2014
+ * @version 14-04-2014
  */
 public enum Case {
     VIDE("  "),

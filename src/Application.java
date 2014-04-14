@@ -2,10 +2,9 @@ import java.util.Scanner;
 
 /* TODO Package. */
 
-/** TODO.
- *
+/**
  * @author CHAUVEAU - GARAYT
- * @version 26-03-2014
+ * @version 14-04-2014
  */
 public class Application {
 
@@ -14,15 +13,15 @@ public class Application {
         Controleur controleur = new Controleur(20, 20);
         Affichage affichage = new Affichage(controleur.plateau());
         
-        /* Place le premier fruit. */
-        controleur.ajouterFruit();
+        /* Initialisation du jeu */
+        controleur.ajouterFruit();     
     	controleur.rafraichir();
     	affichage.afficher();
-
 
     	System.out.println("Choix de la direction : ");
         Scanner sc = new Scanner(System.in);
         
+        /* Boucle qui attend une entrée de l'utilisateur */
         while(true)
         {
 

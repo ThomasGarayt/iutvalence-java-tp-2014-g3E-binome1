@@ -1,14 +1,15 @@
 /* TODO Package. */
 
 /**
- * TODO.
- *
  * @author CHAUVEAU - GARAYT
- * @version 26-03-2014
+ * @version 14-04-2014
  */
+
 public class Coordonnees {
+	
     /** L'abscisse d'une coordonnée */
     public final int x;
+    
     /** L'ordonnée d'une coordonnée */
     public final int y;
 

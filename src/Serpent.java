@@ -10,12 +10,12 @@ import com.sun.org.apache.xalan.internal.xsltc.dom.CachedNodeListIterator;
 /* TODO Package. */
 
 /**
- * TODO.
- *
  * @author CHAUVEAU - GARAYT
- * @version 26-03-2014
+ * @version 14-04-2014
  */
+
 public class Serpent {
+	
     /** Taille initiale du serpent. */
     private static final int TAILLE_INITIALE = 5;
     

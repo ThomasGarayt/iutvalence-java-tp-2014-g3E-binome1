@@ -1,19 +1,19 @@
 /* TODO Package. */
 
 /**
- * TODO.
- *
  * @author CHAUVEAU - GARAYT
- * @version 26-03-2014
+ * @version 14-04-2014
  */
+
 public class Plateau {
-    /** TODO. */
+	
+    /** Largeur du Plateau de jeu */
     private final int largeur;
     
-    /** TODO. */
+    /** Hauteur du Plateau de jeu */
     private final int hauteur;
     
-    /** TODO. */
+    /** Le plateau est une matrice de Case */
     private final Case[][] plateau;
 
     /** Création et initialisation à vide du plateau. */
@@ -38,13 +38,13 @@ public class Plateau {
 
     /**
      * Rajout d'une case FRUIT à une coordonnée donnée.
-     * TODO à améliorer dans des futures versions.
+     * TODO A améliorer dans des futures versions.
      */
     public void ajouterFruit() {
         while (true) {
             /* TODO Préférer SecureRandom à Math.random */
-            int xFruit = (int) ((Math.random() * this.largeur) - 2)+2;
-            int yFruit = (int) ((Math.random() * this.hauteur) - 2)+2;
+            int xFruit = (int) ((Math.random() * this.largeur) - 2);
+            int yFruit = (int) ((Math.random() * this.hauteur) - 2);
 
             if (this.plateau[xFruit][yFruit] != Case.SERPENT) {
                 this.plateau[xFruit][yFruit] = Case.FRUIT;
@@ -91,6 +91,8 @@ public class Plateau {
         return plateau.toString();
     }
     
+    /** Renvoie le type de la case d'une Coordonnees donnée
+     * @return Le type de Case à une Coordonnees */
     public Case getTypeCase(Coordonnees coordonnees)
     {
     	return this.plateau[coordonnees.getX()][coordonnees.getY()];
